@@ -1,5 +1,3 @@
-# note: much of the framework for mapping labels and the overall framework for cleaning the textual data was derived from professor David Steier of Carnegie Mellon University 
-
 # Importing the required packages
 import os
 import re
