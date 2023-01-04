@@ -17,8 +17,8 @@ warnings.filterwarnings('ignore')
 
 # Importing the datasets
 def importData():
-    train = pd.read_csv('train.csv', error_bad_lines=False)
-    test = pd.read_csv('test.csv', error_bad_lines=False)
+    train = pd.read_csv('train.csv', error_bad_lines=False, warn_bad_lines=False)
+    test = pd.read_csv('test.csv', error_bad_lines=False, warn_bad_lines=False)
     return train, test
 
 def filterData(train, test):
@@ -145,8 +145,8 @@ def vectorizeText(trainDataCleanedWithoutStopWords, testDataCleanedWithoutStopWo
 # main function if executing this module 
 if __name__ == '__main__': 
     train, test = importData() # import raw data
-
-    train, test = filterData(train, test) # filter data for certain text categories
+    
+    train, test, X_train, X_test= filterData(train, test) # filter data for certain text categories
 
     labels_train_encoded, labels_encoded_test = initalizeLabels(train, test) # encode labels
 
@@ -155,6 +155,3 @@ if __name__ == '__main__':
 
     train_data_stop_removed = cleanStopWords(train_data_list_cleaned) # remove the tokens in the stopwords list from utterance
     test_data_stop_removed = cleanStopWords(test_data_list_cleaned) # remove the tokens in the stopwords list from utterance
-
-    
-
