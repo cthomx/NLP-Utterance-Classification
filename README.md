@@ -20,10 +20,10 @@ Other models, like a multi-layer perceptron or stochastic gradient descent class
 ## Modeling - BERT
 After importing the uncleaned data, the training and test instances were split into batches as the GPU used in encoding did not have enough memory to contain the full dataset. BERT produces as vector with 768 columns that represents an encoding of the utterance. These encodings were then passed to Sci-Kit Learn's MLPClassifier. 
 
-The training accuracy and f1 score for the MLP classifier was 94%. The confusion matrix is shown below:
+The training accuracy and f1 score for the MLP classifier was 94%. The confusion matrix is shown below:<br />
 <img src="./Static/BERT_Train.png" alt="drawing" width="350"/>
 
-The testing accuracy and f1 score for hte MLP classifier was 65%. The confusion matrix is shown below:
+The testing accuracy and f1 score for hte MLP classifier was 65%. The confusion matrix is shown below:<br />
 <img src="./Static/BERT_Test.png" alt="drawing" width="350"/>
 
 Based on the decrement in performance, and high training accuracy, it is reasonable to conclude that the model is overfitting on the training data. Due to processing constraints, hyper-parameter tuning through GridSearchCV was not included in the Model_BERT.ipynb file, however, this is certainly worth exploring in future iterations. 
